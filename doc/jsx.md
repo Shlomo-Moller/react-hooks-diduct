@@ -43,7 +43,7 @@ const element = React.createElement(
 JSX... :
 
 * Helps separate *concerns* (rather than technologies) with
-  [React components](./components-and-props.md#react-components)
+  [React components](./react-components.md#react-components)
   that contain both markup and logic.
 * Allows React to show more useful error and warning messages.
 * Prevents injection attacks - It is safe to embed user input in JSX.
