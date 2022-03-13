@@ -58,4 +58,4 @@ An update in the component causes React to update the DOM accordingly
 
 [Prev - React Components](./react-components.md)
 |
-[Next - Variable vs Ref vs State](../ref-state-effect/variable-vs-ref-vs-state.md)
+[Next - Special Props](./special-props.md)

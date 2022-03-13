@@ -10,6 +10,7 @@ My function-components-focused summary on React.
   - [Rendering Elements](./doc/basic/rendering-elements.md)
   - [React Components](./doc/basic/react-components.md)
   - [Component Lifecycle](./doc/basic/component-lifecycle.md)
+	- [Special Props](./doc/basic/special-props.md)
 * Ref, State, Effect
   - [Variable vs Ref vs State](./doc/ref-state-effect/variable-vs-ref-vs-state.md)
 

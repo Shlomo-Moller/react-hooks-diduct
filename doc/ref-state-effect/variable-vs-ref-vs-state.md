@@ -4,6 +4,6 @@
 
 ---
 
-[Prev - Component Lifecycle](../basic/component-lifecycle.md)
+[Prev - Special Props](../basic/special-props.md)
 |
 [Next - ]()
