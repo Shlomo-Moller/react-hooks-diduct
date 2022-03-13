@@ -15,7 +15,7 @@ ReactDOM.render(element, document.getElementById('root'))
 React elements are immutable.
 
 However,
-[React components](./react-components.md#react-components)
+[React components](./react-components.md)
 can be stateful; they can manage the returned element by a state that could be updated and cause a re-render of the element.
 
 ## [React Only Updates What’s Necessary](https://reactjs.org/docs/rendering-elements.html#react-only-updates-whats-necessary)
