@@ -43,7 +43,7 @@ An update in the component causes React to update the DOM accordingly
 
 >**Note**
 >
->Again - each of these won't necessarily cause an actual visual change on the screen.
+>Again - for any of these "stations" - it won't necessarily cause an actual visual change on the screen.
 
 <br /><br />
 
