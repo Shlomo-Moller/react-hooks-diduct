@@ -31,7 +31,7 @@ class Welcome extends React.Component {
 ```
 
 React uses an instance of the component's class per component
-[lifecycle](./state-and-lifecycle.md#component-lifecycle),
+[lifecycle](./component-lifecycle.md),
 calling its `render()` method when a state update is needed
 (as long as we render `<Welcome />` into the same DOM node, only a single instance of the `Welcome` class will be used).
 
@@ -155,4 +155,4 @@ const Comment = props => (
 
 [Prev - Rendering Elements](./rendering-elements.md)
 |
-[Next - State and Lifecycle](./state-and-lifecycle.md)
+[Next - Component Lifecycle](./component-lifecycle.md)

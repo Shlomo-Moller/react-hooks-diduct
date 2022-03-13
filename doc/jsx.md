@@ -88,7 +88,7 @@ JSX... :
   <del>`tabindex`</del> -> <ins>`tabIndex`</ins>.
 
 * JSX allows self-closing for any tag (`<img />`,
-[`<MyComponent />`](./components-and-props.md)).
+[`<MyComponent />`](./react-components.md)).
 
 <br /><br />
 
