@@ -2,7 +2,7 @@
 
 >**Note**
 >
->**This summary is focused on the Hook (function component) perspective**.
+>**This summary is focused on the <u>Hook</u> (function component) perspective**.
 
 <br /><br />
 
