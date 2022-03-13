@@ -8,7 +8,7 @@ My function-components-focused summary on React.
 * [JSX](./doc/jsx.md)
 * [Rendering Elements](./doc/rendering-elements.md)
 * [React Components](./doc/react-components.md)
-* [State and Lifecycle](./doc/state-and-lifecycle.md)
+* [Component Lifecycle](./doc/component-lifecycle.md)
 * [`React.createRef()`](./doc/reactcreateref.md)
 
 <br /><br />
