@@ -30,7 +30,6 @@ When it is cleared from the DOM, it is "unmounted".
 ## State Update -> Re-Render
 
 When a component update its state, it re-renders its element with the new state values.
-Again - not necessarily with actual change on the screen.
 An update in the component causes React to update the DOM accordingly
 ([only what is necessary](./rendering-elements.md#react-only-updates-whats-necessary)).
 
@@ -41,6 +40,10 @@ An update in the component causes React to update the DOM accordingly
 * Begins after the component is [**mounted**](#mount-and-unmount) (render onto the DOM is complete).
 * Ends just before the component will [**unmount**](#mount-and-unmount) (will be removed from the DOM).
 * Optionally, could have in between some [**updates**](#state-update---re-render) (re-renders).
+
+>**Note**
+>
+>Again - each of these won't necessarily cause an actual visual change on the screen.
 
 <br /><br />
 
