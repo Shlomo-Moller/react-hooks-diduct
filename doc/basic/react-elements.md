@@ -32,6 +32,6 @@ This object represents the following DOM node:
 
 ---
 
-[Prev - Home](../README.md)
+[Prev - Home](../../README.md)
 |
 [Next - JSX](./jsx.md)
