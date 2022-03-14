@@ -107,19 +107,16 @@ export const ThemeContext = createContext(themes.dark)
 `ThemedButton.js`:
 
 ```js
-class ThemedButton extends React.Component {
-  render() {
-    let props = this.props
-    let theme = this.context
-    return (
+const ThemedButton = props => (
+  <ThemeContext.Consumer>
+    {theme => (
       <button
         { ...props }
         style={{ backgroundColor: theme.background }}
       />
-    )
-  }
-}
-ThemedButton.contextType = ThemeContext
+    )}
+  </ThemeContext.Consumer>
+)
 ```
 
 `Toolbar.js`:
@@ -139,7 +136,10 @@ const ThemeToggler = () => {
   
   const [theme, setTheme] = useState(themes.light)
   
-  const toggleTheme = () => setTheme(prev => prev === themes.light ? themes.dark : themes.light)
+	const toggleTheme = useCallback(
+		() => setTheme(prev => prev === themes.light ? themes.dark : themes.light),
+		[setTheme, themes] // Avoid unintentional renders
+	)
   
   return (
     <Page>
@@ -153,3 +153,11 @@ const ThemeToggler = () => {
   )
 }
 ```
+
+<br /><br />
+
+---
+
+[Prev - ]()
+|
+[Next - Updating Context from a Nested Component](./update-from-nested.md)

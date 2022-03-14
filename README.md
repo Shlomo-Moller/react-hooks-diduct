@@ -16,6 +16,8 @@ My function-components-focused summary on React.
 * [Advanced](./doc/advanced)
   - [Context](./doc/advanced/context)
     * [Context](./doc/advanced/context/context.md)
+    * [Updating Context from a Nested Component](./doc/advanced/context/update-from-nested.md)
+    * [Consuming Multiple Contexts](./doc/advanced/context/consuming-multiple-contexts.md)
 
 <br /><br />
 
