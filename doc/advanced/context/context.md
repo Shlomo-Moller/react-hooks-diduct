@@ -20,7 +20,7 @@ Provide it at some point in the elements tree, with the actual current value:
 ```js
 class App extends React.Component {
   render = () => ( // Current theme is "dark"
-    <ThemeContext.Provider value="dark">
+    <ThemeContext.Provider value='dark'>
       <Toolbar />
     </ThemeContext.Provider>
   )
@@ -52,7 +52,7 @@ Or, if you are using the experimental
 ```js
 class ThemedButton extends React.Component {
   static contextType = ThemeContext
-  render = () => <Button theme={this.context} />
+  render // Same...
 }
 ```
 
@@ -101,14 +101,12 @@ export const themes = {
   }
 }
 
-export const ThemeContext = React.createContext(themes.dark)
+export const ThemeContext = createContext(themes.dark)
 ```
 
-`themed-button.js`:
+`ThemedButton.js`:
 
 ```js
-import { ThemeContext } from './theme-context'
-
 class ThemedButton extends React.Component {
   render() {
     let props = this.props
@@ -121,51 +119,37 @@ class ThemedButton extends React.Component {
     )
   }
 }
-
 ThemedButton.contextType = ThemeContext
-
-export default ThemedButton
 ```
 
-`app.js`:
+`Toolbar.js`:
 
 ```js
-import {ThemeContext, themes} from './theme-context'
-import ThemedButton from './themed-button'
+const Toolbar = ({ changeTheme }) => (
+  <ThemedButton onClick={changeTheme}>
+    Change Theme
+  </ThemedButton>
+)
+```
 
-function Toolbar(props) {
+`ThemeToggler.js`:
+
+```js
+const ThemeToggler = () => {
+  
+  const [theme, setTheme] = useState(themes.light)
+  
+  const toggleTheme = () => setTheme(prev => prev === themes.light ? themes.dark : themes.light)
+  
   return (
-    <ThemedButton onClick={props.changeTheme}>
-      Change Theme
-    </ThemedButton>
+    <Page>
+      <ThemeContext.Provider value={theme}>
+        <Toolbar changeTheme={toggleTheme} />
+      </ThemeContext.Provider>
+      <Section>
+        <ThemedButton>Blabla</ThemedButton>
+      </Section>
+    </Page>
   )
-}
-
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { theme: themes.light }
-
-    this.toggleTheme = () => {
-      this.setState(state => ({
-        theme: state.theme === themes.dark
-				  ? themes.light
-					: themes.dark
-      }))
-    }
-  }
-
-  render() {
-    return (
-      <Page>
-        <ThemeContext.Provider value={this.state.theme}>
-          <Toolbar changeTheme={this.toggleTheme} />
-        </ThemeContext.Provider>
-        <Section>
-          <ThemedButton />
-        </Section>
-      </Page>
-    )
-  }
 }
 ```

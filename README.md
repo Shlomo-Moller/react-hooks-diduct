@@ -14,7 +14,8 @@ My function-components-focused summary on React.
 * [Ref, State, Effect](./doc/ref-state-effect)
   - [Variable vs Ref vs State](./doc/ref-state-effect/variable-vs-ref-vs-state.md)
 * [Advanced](./doc/advanced)
-  - [Context](./doc/advanced/context.md)
+  - [Context](./doc/advanced/context)
+    * [Context](./doc/advanced/context/context.md)
 
 <br /><br />
 
