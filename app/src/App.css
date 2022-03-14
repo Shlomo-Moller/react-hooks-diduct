@@ -1,0 +1,10 @@
+.example-wrapper {
+	border: .5em solid #EEE;
+	margin-top: .5em;
+	padding: .5em;
+	min-height: 1.5em;
+}
+
+option.option-placeholder {
+	color: gray;
+}
