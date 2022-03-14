@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import { themes } from './themed-button/theme-context'
+import { useState, useCallback } from 'react'
 import Page from './Page'
-import { ThemeContext } from './themed-button/theme-context'
-import Toolbar from './Toolbar'
 import Section from './Section'
+import Toolbar from './Toolbar'
 import ThemedButton from './themed-button/ThemedButton'
+import themes from '../../helpers/themes'
+import ThemeContext from './themed-button/theme-context'
 
 const ThemeToggler = () => {
 
 	const [theme, setTheme] = useState(themes.light)
-
-	const toggleTheme = () => setTheme(prev => prev === themes.light ? themes.dark : themes.light)
+  
+	const toggleTheme = useCallback(
+		() => setTheme(prev => prev === themes.light ? themes.dark : themes.light),
+		[setTheme, themes] // Avoid unintentional renders
+	)
 
 	return (
 		<Page>
