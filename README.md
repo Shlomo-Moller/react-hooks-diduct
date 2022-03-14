@@ -13,11 +13,10 @@ My function-components-focused summary on React.
 	- [Special Props](./doc/basic/special-props.md)
 * [Ref, State, Effect](./doc/ref-state-effect)
   - [Variable vs Ref vs State](./doc/ref-state-effect/variable-vs-ref-vs-state.md)
-* [Advanced](./doc/advanced)
-  - [Context](./doc/advanced/context)
-    * [Context](./doc/advanced/context/context.md)
-    * [Updating Context from a Nested Component](./doc/advanced/context/update-from-nested.md)
-    * [Consuming Multiple Contexts](./doc/advanced/context/consuming-multiple-contexts.md)
+* [Context](./doc/context)
+  - [Context](./doc/context/context.md)
+  - [Updating Context from a Nested Component](./doc/context/update-from-nested.md)
+  - [Consuming Multiple Contexts](./doc/context/consuming-multiple-contexts.md)
 
 <br /><br />
 

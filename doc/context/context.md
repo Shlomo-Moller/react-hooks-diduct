@@ -1,9 +1,13 @@
-# Links
+# Context
+
+Links
 
 * [Context](https://reactjs.org/docs/context.html)
 * [`useContext`](https://reactjs.org/docs/hooks-reference.html#usecontext)
 
-# Let's Go
+<br /><br />
+
+## Provide a Context
 
 Create a context object with a default value definition:
 
@@ -18,14 +22,24 @@ const ThemeContext = React.createContext('light') // "light" is the default
 Provide it at some point in the elements tree, with the actual current value:
 
 ```js
-class App extends React.Component {
-  render = () => ( // Current theme is "dark"
-    <ThemeContext.Provider value='dark'>
-      <Toolbar />
-    </ThemeContext.Provider>
-  )
-}
+const App = () => (
+  // Current theme is "dark"
+  <ThemeContext.Provider value='dark'>
+    <Toolbar />
+  </ThemeContext.Provider>
+)
 ```
+
+>*Note*
+>
+>To avoid unnecessary re-renders,
+>allways assign the `value` prop a value that keeps its state between re-renders:
+>
+>```js
+>const [value, setValue] = useState({ x: 0, y: 0 })
+>...
+>return <MyContext.Provider value={value}>...
+>```
 
 Some guy in the middle:
 
@@ -37,24 +51,55 @@ const Toolbar = () => (
 )
 ```
 
-The `ThemedButton` component can subscribe to the context like this:
+<br /><br />
 
-```js
-class ThemedButton extends React.Component {
-  render = () => <Button theme={this.context} />
-}
-ThemedButton.contextType = ThemeContext
-```
+## Subscribe to a Context
 
-Or, if you are using the experimental
-[public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/):
+Subscribe `ThemedButton` to the context in one of the following ways:
 
-```js
-class ThemedButton extends React.Component {
-  static contextType = ThemeContext
-  render // Same...
-}
-```
+### Hooks Way
+
+* `useContext`
+  
+  ```js
+  const ThemedButton = () => {
+    const theme = useContext(ThemeContext)
+    return <Button theme={theme} />
+  }
+  ```
+
+* [`Context.Consumer`](https://reactjs.org/docs/context.html#contextconsumer)
+  
+  Lets you subscribe to a context within a **function component**:
+
+  ```js
+  const ThemedButton = () => (
+    <ThemeContext.Consumer>
+      {value => <Button theme={value} />}
+    </ThemeContext.Consumer>
+  )
+  ```
+
+  Requires a
+  [function as a child](https://reactjs.org/docs/render-props.html#using-props-other-than-render).
+
+### Class Way
+
+* Basic
+  ```js
+  class ThemedButton extends React.Component {
+    render = () => <Button theme={this.context} />
+  }
+  ThemedButton.contextType = ThemeContext
+  ```
+* Using static class field - If you are using the experimental
+  [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/):
+  ```js
+  class ThemedButton extends React.Component {
+    static contextType = ThemeContext
+    render // Same...
+  }
+  ```
 
 You can reference `this.context` in any of the lifecycle methods including the `render` function.
 
@@ -62,20 +107,9 @@ You can reference `this.context` in any of the lifecycle methods including the `
 >
 >You can only subscribe to a **single** context using this API.
 >If you need to read more than one see
->[Consuming Multiple Contexts](https://reactjs.org/docs/context.html#consuming-multiple-contexts).
+>[Consuming Multiple Contexts](./consuming-multiple-contexts.md).
 
-## [`Context.Consumer`](https://reactjs.org/docs/context.html#contextconsumer)
-
-Lets you subscribe to a context within a **function component**:
-
-```js
-<MyContext.Consumer>
-  {value => /* render something based on the context value */}
-</MyContext.Consumer>
-```
-
-Requires a
-[function as a child](https://reactjs.org/docs/render-props.html#using-props-other-than-render).
+<br /><br />
 
 ## [Context.displayName](https://reactjs.org/docs/context.html#contextdisplayname)
 
@@ -85,12 +119,12 @@ MyContext.displayName = 'MyDisplayName'
 <MyContext.Consumer> // "MyDisplayName.Consumer" in DevTools
 ```
 
-## [Examples](https://reactjs.org/docs/context.html#examples)
+<br /><br />
 
-`theme-context.js`:
+## [Example](https://reactjs.org/docs/context.html#examples)
 
 ```js
-export const themes = {
+const themes = {
   light: {
     foreground: '#000',
     background: '#eee'
@@ -100,23 +134,22 @@ export const themes = {
     background: '#222'
   }
 }
-
-export const ThemeContext = createContext(themes.dark)
 ```
 
-`ThemedButton.js`:
+```js
+const ThemeContext = createContext(themes.dark)
+```
 
 ```js
-const ThemedButton = props => (
-  <ThemeContext.Consumer>
-    {theme => (
-      <button
-        { ...props }
-        style={{ backgroundColor: theme.background }}
-      />
-    )}
-  </ThemeContext.Consumer>
-)
+const ThemedButton = props => {
+  const theme = useContext(ThemeContext)
+  return (
+    <button
+      { ...props }
+      style={{ backgroundColor: theme.background }}
+    />
+  )
+}
 ```
 
 `Toolbar.js`:
