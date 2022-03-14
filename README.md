@@ -4,15 +4,17 @@ My function-components-focused summary on React.
 
 ## Table of Content
 
-* Basics
+* [Basics](./doc/basic)
   - [React Elements](./doc/basic/react-elements.md)
   - [JSX](./doc/basic/jsx.md)
   - [Rendering Elements](./doc/basic/rendering-elements.md)
   - [React Components](./doc/basic/react-components.md)
   - [Component Lifecycle](./doc/basic/component-lifecycle.md)
 	- [Special Props](./doc/basic/special-props.md)
-* Ref, State, Effect
+* [Ref, State, Effect](./doc/ref-state-effect)
   - [Variable vs Ref vs State](./doc/ref-state-effect/variable-vs-ref-vs-state.md)
+* [Advanced](./doc/advanced)
+  - [Context](./doc/advanced/context.md)
 
 <br /><br />
 
