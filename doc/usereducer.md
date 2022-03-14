@@ -88,13 +88,6 @@ function reducer(state, action) {
 
 function Counter({ initialCount }) {
   const [state, dispatch] = useReducer(reducer, initialCount, init)
-  return (
-    <>
-      {/* ... */}
-      <button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>
-        Reset
-      </button>
-    </>
-  )
+  // Same return...
 }
 ```
