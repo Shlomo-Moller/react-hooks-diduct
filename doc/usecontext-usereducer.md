@@ -1,4 +1,4 @@
-# `useContext` & `useReducer`
+# Context & `useReducer`
 
 ## Example
 
@@ -150,3 +150,11 @@ const TodosApp = () => {
   )
 }
 ```
+
+<br /><br />
+
+---
+
+[Prev - `useReducer`](./usereducer.md)
+|
+[Next - ]()

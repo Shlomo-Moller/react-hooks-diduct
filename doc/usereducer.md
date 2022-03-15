@@ -91,3 +91,11 @@ function Counter({ initialCount }) {
   // Same return...
 }
 ```
+
+<br /><br />
+
+---
+
+[Prev - Consuming Multiple Contexts](./context/consuming-multiple-contexts.md)
+|
+[Next - Context & `useReducer`](./usecontext-usereducer.md)

@@ -59,4 +59,4 @@ const AppPage = ({ signedInUser, theme }) => (
 
 [Prev - Updating Context from a Nested Component](./update-from-nested.md)
 |
-[Next - ]()
+[Next - `useReducer`](../usereducer.md)

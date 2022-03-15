@@ -18,6 +18,7 @@ My function-components-focused summary on React.
   - [Updating Context from a Nested Component](./doc/context/update-from-nested.md)
   - [Consuming Multiple Contexts](./doc/context/consuming-multiple-contexts.md)
 * [`useReducer`](./doc/usereducer.md)
+* [Context & `useReducer`](./doc/usecontext-usereducer.md)
 
 <br /><br />
 
