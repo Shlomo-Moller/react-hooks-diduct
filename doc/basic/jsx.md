@@ -18,7 +18,7 @@ const element = (
 
 ## JSX -> React Element
 
-Babel compiles JSX to `React.createElement()` calls that evaluate to
+[Babel](https://babeljs.io) compiles JSX to `React.createElement()` calls that evaluate to
 [React elements](./react-elements.md).
 
 The
