@@ -12,7 +12,7 @@ Links
 Create a context object with a default value definition:
 
 ```js
-const ThemeContext = React.createContext('light') // "light" is the default
+const ThemeContext = createContext('light') // "light" is the default
 ```
 
 >**Note**
@@ -30,7 +30,7 @@ const App = () => (
 )
 ```
 
->*Note*
+>**Note**
 >
 >To avoid unnecessary re-renders,
 >allways assign the `value` prop a value that keeps its state between re-renders:
