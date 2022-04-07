@@ -169,8 +169,8 @@ const ThemeToggler = () => {
   
   const [theme, setTheme] = useState(themes.light)
   
-	const toggleTheme = useCallback(
-		() => setTheme(prev => prev === themes.light ? themes.dark : themes.light),
+  const toggleTheme = useCallback(
+    () => setTheme(prev => prev === themes.light ? themes.dark : themes.light),
 		[setTheme, themes] // Avoid unintentional renders
 	)
   
